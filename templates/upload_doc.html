@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<head>
+  <h1>Image Classification</h1>
+</head>
+<body>
+  <div class="text">Upload your image with one of the next categories:</div>
+  <ul>
+    <li>airplane</li>
+    <li>automobile</li>
+    <li>bird</li>
+    <li>cat</li>
+    <li>deer</li>
+    <li>dog</li>
+    <li>frog</li>
+    <li>horse</li>
+    <li>ship</li>
+    <li>truck</li>
+  </ul>
+  <form enctype="multipart/form-data" action="" method="post">
+    {% csrf_token %}
+    <br />
+    <div class="text">Chose neural network to use: {{ form.nn_id }}</div>
+    <br />
+    <div class="text">Chose your image: {{form.image}}</div>
+    <input type="submit" value="Classificate" class="button" />
+  </form>
+</body>
+{% endblock %}
